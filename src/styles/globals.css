@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Paleta Oficial del Manual de Marca */
+  --crema: #F9F6EF;       /* Crema Base: Elegancia que nace de la esencia */
+  --teal: #147B80;        /* Verde Azulado: Empatía y resultados tangibles */
+  --lavanda: #C9B8E3;     /* Lavanda: Sensibilidad como herramienta creativa */
+  --amarillo: #F3D46C;    /* Amarillo Suave (Lume): Crear desde la emoción */
+  --tinta: #1A1A1A;       /* Tinta: Textos principales */
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--crema);
+  color: var(--tinta);
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+* { box-sizing: border-box; }
+h1, h2, h3, h4, h5, h6 { margin: 0; line-height: 1.2; font-family: 'Montserrat', sans-serif; color: var(--tinta); }
+p { margin: 0; }
+a { text-decoration: none; color: inherit; }
+
+/* Tipografía manuscrita para "Ana Hernández" y "Lume" (Alternativa web a Lucida Handwriting) */
+.font-lume {
+  font-family: 'Great Vibes', 'Lucida Handwriting', cursive;
+  font-weight: 400;
+  color: var(--teal);
+}
