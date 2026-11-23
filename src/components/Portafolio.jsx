@@ -81,13 +81,13 @@ function CamaraAnimada({ color = "#7A2048", accent = "#D4AF37" }) {
   );
 }
 
-// ============ DATOS DE DESTACADOS ============
+// ============ DATOS DE DESTACADOS (SOLO 3) ============
 const destacados = [
   { 
     id: 5, nombre: "EL ÚLTIMO MENSAJERO", cat: "Animación 2D", color: "#D4AF37",
     sector: "Animación Independiente", servicios: "Animación 2D · Diseño de personajes",
     imagen: "/documentos/bibliadeanimacion/el-ultimo-mensajero20.png",
-    videoSrc: "/videos/el-ultimo-mensajero.mp4", 
+    videoSrc: "https://1drv.ms/v/c/ebc425b9c1f3ca2d/IQTyQPt1K8dkTpX8coD82AAmAVgqB-wSTFiVgLaX0eDw07s?width=1920&height=1080", 
     bibliaId: 8,
     descripcion: "En una sociedad distópica devastada por una guerra mundial, las palomas son modificadas genéticamente para volverlas inteligentes y participar en el conflicto. Cuando la humanidad se extermina a sí misma, estas aves terminan gobernando el mundo.",
     sobre: "Un cortometraje animado que explora las consecuencias de la guerra a través de una metáfora visual poderosa: las palomas, símbolo de paz, convertidas en armas vivientes.",
@@ -98,7 +98,7 @@ const destacados = [
   { 
     id: 2, nombre: "AJENO", cat: "Cortometraje", color: "#D4AF37",
     sector: "Cine Independiente", servicios: "Dirección · Guión · Edición",
-    videoSrc: "/videos/ajeno.mp4", 
+    videoSrc: "https://1drv.ms/v/c/ebc425b9c1f3ca2d/IQSTyMSgcPQKR655t9yxru9sAVm6rCsmi_ZLH-rAooQryOY?width=3840&height=2160", 
     descripcion: "Cortometraje sobre gentrificación.",
     sobre: "Un cortometraje que explora las tensiones sociales y humanas en barrios en proceso de gentrificación, capturando la voz de quienes ven transformarse su hogar.",
     reto: "Documentar un fenómeno social complejo.", 
@@ -108,7 +108,7 @@ const destacados = [
   { 
     id: 3, nombre: "HABITANDO LO INCIERTO", cat: "Documental", color: "#EBD5D5",
     sector: "Salud y Sociedad", servicios: "Guión · Dirección · Producción",
-    videoSrc: "/videos/habitando.mp4", 
+    videoSrc: "https://1drv.ms/v/c/ebc425b9c1f3ca2d/IQSocWimFauTRISIQNvlx1TAAfHRJbJBWdJPz7okyf7SrSQ", 
     descripcion: "Documental en primera persona.",
     sobre: "Un documental íntimo que aborda la experiencia de vivir con una condición de salud desde la dignidad, la voz propia y la resignificación del cuerpo.",
     reto: "Abordar la salud con dignidad.", 
@@ -142,7 +142,6 @@ export default function Portafolio() {
                 boxShadow: "0 10px 30px rgba(122, 32, 72, 0.15)"
               }}>
               
-              {/* 👇 Si tiene imagen definida → muestra imagen, si no → cámara animada */}
               <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}>
                 {proy.imagen ? (
                   <img src={proy.imagen} alt={proy.nombre} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
@@ -151,13 +150,9 @@ export default function Portafolio() {
                 )}
               </div>
 
-              {/* Número destacado */}
               <div style={{ position: "absolute", top: "20px", right: "20px", fontFamily: "Montserrat", fontSize: "40px", fontWeight: 900, color: "#F9F6EF", opacity: 0.25, zIndex: 2 }}>0{i+1}</div>
-
-              {/* Gradiente inferior para legibilidad */}
               <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", background: "linear-gradient(to top, rgba(10, 31, 53, 0.9) 0%, rgba(10, 31, 53, 0) 55%)", zIndex: 1 }} />
 
-              {/* Texto superpuesto */}
               <div style={{ position: "absolute", bottom: 0, left: 0, width: "100%", padding: "30px", zIndex: 2, display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
                 <p style={{ fontFamily: "Montserrat", fontSize: "11px", fontWeight: 700, color: "#D4AF37", textTransform: "uppercase", letterSpacing: "2px", margin: 0 }}>{proy.cat}</p>
                 <h3 style={{ fontFamily: "Montserrat", fontSize: "26px", fontWeight: 900, color: "#FFF", textTransform: "uppercase", marginTop: "8px", lineHeight: 1.1 }}>{proy.nombre}</h3>
@@ -194,7 +189,6 @@ export default function Portafolio() {
               
               <button onClick={() => setProyectoActivo(null)} style={{ position: "absolute", top: "20px", right: "20px", background: "#7A2048", color: "#FFF", border: "none", borderRadius: "50%", width: "44px", height: "44px", fontSize: "20px", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 10 }}>✕</button>
               
-              {/* Header con dos columnas */}
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "30px", marginBottom: "40px", flexWrap: "wrap" }}>
                 <div style={{ flex: 1, minWidth: "300px" }}>
                   <p style={{ fontFamily: "Montserrat", fontSize: "12px", fontWeight: 700, color: "#D4AF37", textTransform: "uppercase", letterSpacing: "3px", marginBottom: "10px" }}>EXPERIENCIA CREATIVA</p>
@@ -217,13 +211,11 @@ export default function Portafolio() {
                 </div>
               </div>
 
-              {/* Sobre el proyecto */}
               <div style={{ backgroundColor: "#FFFFFF", borderRadius: "16px", padding: "30px", marginBottom: "30px", boxShadow: "0 4px 15px rgba(122, 32, 72, 0.05)" }}>
                 <h3 style={{ fontFamily: "Montserrat", fontSize: "18px", fontWeight: 800, color: "#7A2048", textTransform: "uppercase", marginBottom: "15px" }}>Sobre el Proyecto</h3>
                 <p style={{ fontFamily: "Inter Tight", fontSize: "15px", lineHeight: 1.7, color: "#1A1A1A", margin: 0 }}>{proyectoActivo.sobre}</p>
               </div>
 
-              {/* Tres columnas con bordes de color */}
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "20px", marginBottom: "30px" }}>
                 <div style={{ backgroundColor: "#FFFFFF", padding: "25px", borderRadius: "16px", boxShadow: "0 4px 15px rgba(122, 32, 72, 0.05)", borderLeft: "4px solid #7A2048" }}>
                   <h4 style={{ color: "#7A2048", fontFamily: "Montserrat", fontWeight: 800, fontSize: "14px", textTransform: "uppercase", margin: "0 0 12px 0" }}>🎯 El Reto</h4>
@@ -239,13 +231,24 @@ export default function Portafolio() {
                 </div>
               </div>
 
-              {/* Video */}
+              {/* 👇 REPRODUCTOR: Fuerza iframe si es enlace de OneDrive, sino usa video local */}
               <div style={{ width: "100%", borderRadius: "16px", overflow: "hidden", backgroundColor: "#000", marginBottom: "20px" }}>
-                <video src={proyectoActivo.videoSrc} controls autoPlay muted loop playsInline 
-                  style={{ width: "100%", display: "block", maxHeight: "500px", objectFit: "contain" }} />
+                {proyectoActivo.videoSrc && proyectoActivo.videoSrc.includes("1drv.ms") ? (
+                  <iframe 
+                    src={proyectoActivo.videoSrc} 
+                    width="100%" 
+                    height="400" 
+                    frameBorder="0" 
+                    allowFullScreen 
+                    title={`Video de ${proyectoActivo.nombre}`}
+                    style={{ display: "block", maxHeight: "500px" }}
+                  />
+                ) : (
+                  <video src={proyectoActivo.videoSrc} controls autoPlay muted loop playsInline 
+                    style={{ width: "100%", display: "block", maxHeight: "500px", objectFit: "contain" }} />
+                )}
               </div>
 
-              {/* 👇 Botón para ir a la biblia de animación (solo si tiene bibliaId) */}
               {proyectoActivo.bibliaId && (
                 <div style={{ textAlign: "center", marginTop: "20px" }}>
                   <Link to="/proyectos" style={{ textDecoration: "none" }}>
