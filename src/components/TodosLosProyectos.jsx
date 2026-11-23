@@ -11,7 +11,6 @@ function CamaraAnimada({ color = "#7A2048", accent = "#D4AF37" }) {
       display: "flex", alignItems: "center", justifyContent: "center",
       position: "relative", overflow: "hidden"
     }}>
-      {/* Ondas de fondo sutiles */}
       {[0, 1, 2].map((i) => (
         <motion.div key={i}
           initial={{ scale: 0.5, opacity: 0 }}
@@ -25,7 +24,6 @@ function CamaraAnimada({ color = "#7A2048", accent = "#D4AF37" }) {
         />
       ))}
 
-      {/* Cámara SVG */}
       <motion.svg
         width="140" height="110" viewBox="0 0 140 110"
         initial={{ y: 0 }}
@@ -33,34 +31,27 @@ function CamaraAnimada({ color = "#7A2048", accent = "#D4AF37" }) {
         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
         style={{ filter: "drop-shadow(0 10px 25px rgba(0,0,0,0.3))", zIndex: 2 }}
       >
-        {/* Cuerpo de la cámara */}
         <motion.rect x="20" y="35" width="85" height="55" rx="8"
           fill="#F9F6EF"
           animate={{ filter: ["brightness(1)", "brightness(1.05)", "brightness(1)"] }}
           transition={{ duration: 2.5, repeat: Infinity }}
         />
-        {/* Parte superior */}
         <rect x="30" y="22" width="30" height="15" rx="3" fill="#F9F6EF" />
-        {/* Botón de grabación */}
         <motion.circle cx="95" cy="28" r="5" fill="#ff3b3b"
           animate={{ opacity: [1, 0.3, 1] }}
           transition={{ duration: 1.2, repeat: Infinity }}
         />
-        {/* Lente exterior */}
         <circle cx="62" cy="62" r="22" fill="#1A1A1A" />
         <circle cx="62" cy="62" r="18" fill="#2a2a2a" />
-        {/* Reflejo del lente */}
         <motion.circle cx="56" cy="56" r="5" fill={accent} opacity="0.8"
           animate={{ opacity: [0.4, 0.9, 0.4] }}
           transition={{ duration: 2, repeat: Infinity }}
         />
         <circle cx="68" cy="68" r="2" fill="#F9F6EF" opacity="0.6" />
-        {/* Detalles */}
         <rect x="25" y="78" width="15" height="3" rx="1" fill={accent} opacity="0.6" />
         <rect x="45" y="78" width="8" height="3" rx="1" fill={color} opacity="0.4" />
       </motion.svg>
 
-      {/* Indicador REC */}
       <motion.div
         animate={{ opacity: [1, 0.2, 1] }}
         transition={{ duration: 1.2, repeat: Infinity }}
@@ -78,7 +69,6 @@ function CamaraAnimada({ color = "#7A2048", accent = "#D4AF37" }) {
         }}>REC</span>
       </motion.div>
 
-      {/* Etiqueta de categoría */}
       <div style={{
         position: "absolute", bottom: "20px", right: "20px",
         fontFamily: "Montserrat", fontSize: "10px", fontWeight: 700,
@@ -93,10 +83,10 @@ function CamaraAnimada({ color = "#7A2048", accent = "#D4AF37" }) {
 
 // ============ DATOS DE PROYECTOS ============
 const todosLosProyectos = [
-  { id: 2, nombre: "AJENO", categoria: "Audiovisual", cat: "Cortometraje", sector: "Cine Independiente", servicios: "Dirección · Guión · Edición", color: "#D4AF37", imagen: "/imagenes/ajeno.jpg", videoSrc: "/videos/ajeno.mp4", esAudiovisualPuro: true, descripcion: "Cortometraje sobre gentrificación.", sobre: "Un cortometraje que explora las tensiones sociales y humanas en barrios en proceso de gentrificación.", reto: "Documentar un fenómeno social complejo.", aporte: "Narrativa en primera persona.", resultado: "Generó conversaciones importantes." },
-  { id: 3, nombre: "HABITANDO LO INCIERTO", categoria: "Audiovisual", cat: "Documental", sector: "Salud y Sociedad", servicios: "Guión · Dirección · Producción", color: "#EBD5D5", imagen: "/imagenes/habitando.jpg", videoSrc: "/videos/habitando.mp4", esAudiovisualPuro: true, descripcion: "Documental en primera persona.", sobre: "Un documental íntimo que aborda la experiencia de vivir con una condición de salud desde la dignidad.", reto: "Abordar la salud con dignidad.", aporte: "Guion poético y acompañamiento sensible.", resultado: "Obra íntima y poderosa." },
-  { id: 4, nombre: "RESIGNIFICACIÓN", categoria: "Audiovisual", cat: "Video Arte", sector: "Arte Contemporáneo", servicios: "Dirección de arte · Edición · Sonido", color: "#D4AF37", imagen: "/imagenes/resignificacion.jpg", videoSrc: "/videos/resignificacion.mp4", esAudiovisualPuro: true, descripcion: "Narrativa poética visual.", sobre: "Una pieza de video arte que explora la memoria colectiva de los lugares.", reto: "Capturar la esencia de un lugar.", aporte: "Metáforas visuales y sonido inmersivo.", resultado: "Reflexión sobre la memoria colectiva." },
-  { id: 5, nombre: "EL ÚLTIMO MENSAJERO", categoria: "Animación", cat: "Animación 2D", sector: "Animación Independiente", servicios: "Animación 2D · Diseño de personajes", color: "#D4AF37", imagen: "/documentos/bibliadeanimacion/el-ultimo-mensajero20.png", videoSrc: "/videos/el-ultimo-mensajero.mp4", bibliaId: 8, descripcion: "Cortometraje animado distópico.", sobre: "En una sociedad distópica, las palomas son modificadas genéticamente para participar en una guerra mundial.", reto: "Construir una narrativa visual coherente para un mundo distópico.", aporte: "Dirección de animación 2D y storyboard.", resultado: "Un cortometraje con atmósfera única." },
+  { id: 2, nombre: "AJENO", categoria: "Audiovisual", cat: "Cortometraje", sector: "Cine Independiente", servicios: "Dirección · Guión · Edición", color: "#D4AF37", imagen: "/imagenes/ajeno.jpg", videoSrc: "https://1drv.ms/v/c/ebc425b9c1f3ca2d/IQSTyMSgcPQKR655t9yxru9sAVm6rCsmi_ZLH-rAooQryOY?width=3840&height=2160", esAudiovisualPuro: true, descripcion: "Cortometraje sobre gentrificación.", sobre: "Un cortometraje que explora las tensiones sociales y humanas en barrios en proceso de gentrificación.", reto: "Documentar un fenómeno social complejo.", aporte: "Narrativa en primera persona.", resultado: "Generó conversaciones importantes." },
+  { id: 3, nombre: "HABITANDO LO INCIERTO", categoria: "Audiovisual", cat: "Documental", sector: "Salud y Sociedad", servicios: "Guión · Dirección · Producción", color: "#EBD5D5", imagen: "/imagenes/habitando.jpg", videoSrc: "https://1drv.ms/v/c/ebc425b9c1f3ca2d/IQSocWimFauTRISIQNvlx1TAAfHRJbJBWdJPz7okyf7SrSQ", esAudiovisualPuro: true, descripcion: "Documental en primera persona.", sobre: "Un documental íntimo que aborda la experiencia de vivir con una condición de salud desde la dignidad.", reto: "Abordar la salud con dignidad.", aporte: "Guion poético y acompañamiento sensible.", resultado: "Obra íntima y poderosa." },
+  { id: 4, nombre: "RESIGNIFICACIÓN", categoria: "Audiovisual", cat: "Video Arte", sector: "Arte Contemporáneo", servicios: "Dirección de arte · Edición · Sonido", color: "#D4AF37", imagen: "/imagenes/resignificacion.jpg", videoSrc: "https://1drv.ms/v/c/ebc425b9c1f3ca2d/IQSawdgsxRs_S5H6QVchtAN4Aa2PTSa-vvOgeweCWBxwKyI", esAudiovisualPuro: true, descripcion: "Narrativa poética visual.", sobre: "Una pieza de video arte que explora la memoria colectiva de los lugares.", reto: "Capturar la esencia de un lugar.", aporte: "Metáforas visuales y sonido inmersivo.", resultado: "Reflexión sobre la memoria colectiva." },
+  { id: 5, nombre: "EL ÚLTIMO MENSAJERO", categoria: "Animación", cat: "Animación 2D", sector: "Animación Independiente", servicios: "Animación 2D · Diseño de personajes", color: "#D4AF37", imagen: "/documentos/bibliadeanimacion/el-ultimo-mensajero20.png", videoSrc: "https://1drv.ms/v/c/ebc425b9c1f3ca2d/IQTyQPt1K8dkTpX8coD82AAmAVgqB-wSTFiVgLaX0eDw07s?width=1920&height=1080", bibliaId: 8, descripcion: "Cortometraje animado distópico.", sobre: "En una sociedad distópica, las palomas son modificadas genéticamente para participar en una guerra mundial.", reto: "Construir una narrativa visual coherente para un mundo distópico.", aporte: "Dirección de animación 2D y storyboard.", resultado: "Un cortometraje con atmósfera única." },
   { id: 6, nombre: "PERIÓDICO ECO URBANO", categoria: "Editorial", cat: "Diseño Editorial", sector: "Medios Digitales", servicios: "Dirección de arte · Maquetación", color: "#EBD5D5", imagen: "/documentos/Periodico/periodico1.jpg", videoSrc: "", slides: [["/documentos/Periodico/periodico1.jpg"], ["/documentos/Periodico/periodico2.jpg", "/documentos/Periodico/periodico3.jpg"], ["/documentos/Periodico/periodico4.jpg", "/documentos/Periodico/periodico5.jpg"], ["/documentos/Periodico/periodico6.jpg", "/documentos/Periodico/periodico7.jpg"], ["/documentos/Periodico/periodico8.jpg"]], descripcion: "Periódico digital de sostenibilidad.", sobre: "Diseño y maquetación de un periódico digital enfocado en sostenibilidad y vida urbana.", reto: "Organizar gran cantidad de información en un formato legible.", aporte: "Dirección de arte y maquetación editorial.", resultado: "Publicación visualmente coherente." },
   { id: 7, nombre: "SERES IMAGINARIOS", categoria: "Ilustración", cat: "Ilustración Editorial", sector: "Literatura y Arte", servicios: "Ilustración digital · Concept art", color: "#7A2048", imagen: "/documentos/seresimaginarios/TU_ARCHIVO_7.png", videoSrc: "", slides: [["/documentos/seresimaginarios/TU_ARCHIVO_1.png"], ["/documentos/seresimaginarios/TU_ARCHIVO_2.png"], ["/documentos/seresimaginarios/TU_ARCHIVO_3.png"], ["/documentos/seresimaginarios/TU_ARCHIVO_4.png"], ["/documentos/seresimaginarios/TU_ARCHIVO_5.png"], ["/documentos/seresimaginarios/TU_ARCHIVO_6.png"], ["/documentos/seresimaginarios/TU_ARCHIVO_7.png"], ["/documentos/seresimaginarios/TU_ARCHIVO_8.png"], ["/documentos/seresimaginarios/TU_ARCHIVO_9.png"], ["/documentos/seresimaginarios/TU_ARCHIVO_10.png"]], descripcion: "Serie inspirada en Borges.", sobre: "Ilustraciones inspiradas en 'El libro de los seres imaginarios' de Jorge Luis Borges.", reto: "Traducir descripciones literarias en representaciones visuales.", aporte: "Investigación conceptual y bocetado digital.", resultado: "Colección visual que captura la esencia literaria." },
   { id: 8, nombre: "BIBLIA DE ANIMACIÓN", categoria: "Editorial", cat: "Biblia de Animación", sector: "Animación", servicios: "Diseño de personajes · Escenarios", color: "#EBD5D5", imagen: "/documentos/bibliadeanimacion/el-ultimo-mensajero1.png", videoSrc: "", slides: [["/documentos/bibliadeanimacion/el-ultimo-mensajero1.png"], ["/documentos/bibliadeanimacion/el-ultimo-mensajero2.jpg"], ["/documentos/bibliadeanimacion/el-ultimo-mensajero3.jpg"], ["/documentos/bibliadeanimacion/el-ultimo-mensajero4.jpg"], ["/documentos/bibliadeanimacion/el-ultimo-mensajero5.jpg"], ["/documentos/bibliadeanimacion/el-ultimo-mensajero6.jpg"], ["/documentos/bibliadeanimacion/el-ultimo-mensajero7.jpg"], ["/documentos/bibliadeanimacion/el-ultimo-mensajero8.jpg"], ["/documentos/bibliadeanimacion/el-ultimo-mensajero9.jpg"], ["/documentos/bibliadeanimacion/el-ultimo-mensajero10.jpg"], ["/documentos/bibliadeanimacion/el-ultimo-mensajero11.jpg"], ["/documentos/bibliadeanimacion/el-ultimo-mensajero12.jpg"], ["/documentos/bibliadeanimacion/el-ultimo-mensajero13.jpg"], ["/documentos/bibliadeanimacion/el-ultimo-mensajero14.jpg"], ["/documentos/bibliadeanimacion/el-ultimo-mensajero15.jpg"], ["/documentos/bibliadeanimacion/el-ultimo-mensajero16.jpg"], ["/documentos/bibliadeanimacion/el-ultimo-mensajero17.jpg"], ["/documentos/bibliadeanimacion/el-ultimo-mensajero18.jpg"], ["/documentos/bibliadeanimacion/el-ultimo-mensajero19.jpg"], ["/documentos/bibliadeanimacion/el-ultimo-mensajero20.png"]], descripcion: "Documento técnico de animación.", sobre: "Documento que establece las reglas, personajes y estilo de animación del cortometraje.", reto: "Unificar la visión artística y técnica.", aporte: "Diseño de personajes, escenarios y paletas de color.", resultado: "Guía completa para el equipo de producción." },
@@ -161,7 +151,6 @@ export default function TodosLosProyectos() {
                 transition={{ duration: 0.3 }} whileHover={{ y: -5 }} onClick={() => setProyectoActivo(proy)}
                 style={{ height: "380px", cursor: "pointer", position: "relative", overflow: "hidden", borderRadius: "16px", boxShadow: "0 10px 30px rgba(122, 32, 72, 0.15)", backgroundColor: proy.color }}>
                 
-                {/* 👇 CÁMARA ANIMADA solo si es audiovisual puro, si no → imagen normal */}
                 <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", overflow: "hidden" }}>
                   {proy.esAudiovisualPuro ? (
                     <CamaraAnimada color={proy.color === "#D4AF37" ? "#7A2048" : proy.color} accent="#D4AF37" />
@@ -235,9 +224,22 @@ export default function TodosLosProyectos() {
                 </div>
               </div>
 
+              {/* 👇 AQUÍ ESTÁ LA MAGIA: Detecta si es URL de OneDrive (iframe) o video local */}
               {proyectoActivo.videoSrc ? (
                 <div style={{ width: "100%", borderRadius: "16px", overflow: "hidden", backgroundColor: "#000", marginBottom: "20px" }}>
-                  <video src={proyectoActivo.videoSrc} controls autoPlay muted loop playsInline style={{ width: "100%", display: "block", maxHeight: "500px", objectFit: "contain" }} />
+                  {proyectoActivo.videoSrc.includes("1drv.ms") ? (
+                    <iframe 
+                      src={proyectoActivo.videoSrc} 
+                      width="100%" 
+                      height="400" 
+                      frameBorder="0" 
+                      allowFullScreen 
+                      title={`Video de ${proyectoActivo.nombre}`}
+                      style={{ display: "block", maxHeight: "500px" }}
+                    />
+                  ) : (
+                    <video src={proyectoActivo.videoSrc} controls autoPlay muted loop playsInline style={{ width: "100%", display: "block", maxHeight: "500px", objectFit: "contain" }} />
+                  )}
                 </div>
               ) : proyectoActivo.slides ? (
                 <GaleriaInteractiva slides={proyectoActivo.slides} />
